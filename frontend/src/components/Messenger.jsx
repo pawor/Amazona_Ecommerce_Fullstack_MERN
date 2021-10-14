@@ -1,8 +1,12 @@
-import { AppBar, Toobar, makeStyles } from '@material-ui/core'
+import { AppBar, Toobar, makeStyles, Box } from '@material-ui/core'
 import React from 'react';
 import Login from './account/Login';
 
 const useStyles = makeStyles({
+    component:{
+        background:'#DCDCDC',
+        height:'100vh',
+    },
     loginHeader:{
         height:200,
         background:'#00bfa5',
@@ -12,12 +16,12 @@ const useStyles = makeStyles({
 const Messenger = () => {
     const classes = useStyles();
     return (
-        <React.Fragment>
+        <Box className={classes.component}>
             <AppBar  className={classes.loginHeader}>
                 <Toobar></Toobar>
             </AppBar>
             <Login/>
-        </React.Fragment>
+        </Box>
     )
 }
 export default Messenger;
